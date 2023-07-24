@@ -1,23 +1,25 @@
 <section class="form">
-  <div>
-    <label for="titulo" class="form-label">Titulo</label>
-    <input class="form-control" type="text" id="titulo" [(ngModel)]="newpost.titulo">
-  </div>
+  <form #formPost="ngForm" (ngSubmit)="getDataForm(formPost)">
+    <div>
+      <label for="titulo" class="form-label">Titulo</label>
+      <input class="form-control" type="text" id="titulo" name="titulo" ngModel>
+    </div>
 
-  <div>
-    <label for="imagen" class="form-label">Imagen</label>
-    <input class="form-control" type="text" id="imagen" [(ngModel)]="newpost.imagen">
-  </div>
+    <div>
+      <label for="imagen" class="form-label">Imagen</label>
+      <input class="form-control" type="text" id="imagen" name="imagen" ngModel>
+    </div>
 
-  <div>
-    <label for="fecha" class="form-label">Fecha</label>
-    <input class="form-control" type="date" id="fecha" [(ngModel)]="newpost.fecha">
-  </div>
+    <div>
+      <label for="fecha" class="form-label">Fecha</label>
+      <input class="form-control" type="date" id="fecha" name="fecha" ngModel>
+    </div>
 
-  <div>
-    <label for="texto">Introduce el cuerpo de la noticia</label>
-    <textarea class="form-control" id="texto" cols="30" rows="10" [(ngModel)]="newpost.texto"></textarea>
-  </div>
+    <div>
+      <label for="texto">Introduce el cuerpo de la noticia</label>
+      <textarea class="form-control" id="texto" cols="30" rows="10" name="texto" ngModel></textarea>
+    </div>
 
-  <button class="mt-3 btn btn-danger" (click)="getDataForm()">Enviar</button>
+    <input class="mt-3 btn btn-danger" type="submit" value="Enviar">
+  </form>
 </section>
