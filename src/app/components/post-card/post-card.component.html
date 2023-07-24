@@ -1,0 +1,8 @@
+<div class="card p-2">
+  <h3 class="card-title">{{miPost.titulo}}</h3>
+  <p>Fecha: {{miPost.fecha | date: 'dd-MM-YY' }}</p>
+  <figure>
+    <img class="img-fluid" [src]="miPost.imagen" [alt]="miPost.titulo">
+  </figure>
+  <div [innerHTML]="miPost.texto"></div>
+</div>

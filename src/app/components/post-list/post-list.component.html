@@ -1,12 +1,5 @@
 <section class="list row g-3">
   <article class="col-12 col-md-6 col-lg-4" *ngFor="let post of arrPost">
-    <div class="card p-2">
-      <h3 class="card-title">{{post.titulo}}</h3>
-      <p>Fecha: {{post.fecha | date: 'dd-MM-YY' }}</p>
-      <figure>
-        <img class="img-fluid" [src]="post.imagen" [alt]="post.titulo">
-      </figure>
-      <div [innerHTML]="post.texto"></div>
-    </div>
+    <app-post-card [miPost]="post"></app-post-card>
   </article>
 </section>
