@@ -1,1 +1,36 @@
-<p>blog works!</p>
+<section class="form">
+  <div>
+    <label for="titulo" class="form-label">Titulo</label>
+    <input class="form-control" type="text" id="titulo" [(ngModel)]="newpost.titulo">
+  </div>
+
+  <div>
+    <label for="imagen" class="form-label">Imagen</label>
+    <input class="form-control" type="text" id="imagen" [(ngModel)]="newpost.imagen">
+  </div>
+
+  <div>
+    <label for="fecha" class="form-label">Fecha</label>
+    <input class="form-control" type="date" id="fecha" [(ngModel)]="newpost.fecha">
+  </div>
+
+  <div>
+    <label for="texto">Introduce el cuerpo de la noticia</label>
+    <textarea class="form-control" id="texto" cols="30" rows="10" [(ngModel)]="newpost.texto"></textarea>
+  </div>
+
+  <button class="mt-3 btn btn-danger" (click)="getDataForm()">Enviar</button>
+</section>
+<hr>
+<section class="list row g-3">
+  <article class="col-12 col-md-6 col-lg-4" *ngFor="let post of arrPost">
+    <div class="card p-2">
+      <h3 class="card-title">{{post.titulo}}</h3>
+      <p>Fecha: {{post.fecha | date: 'dd-MM-YY' }}</p>
+      <figure>
+        <img class="img-fluid" [src]="post.imagen" [alt]="post.titulo">
+      </figure>
+      <div [innerHTML]="post.texto"></div>
+    </div>
+  </article>
+</section>
