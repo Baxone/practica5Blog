@@ -11,8 +11,12 @@ export class BlogComponent {
   newpost: Post = { titulo: "", imagen: "", fecha: "", texto: "" }
 
   getDataForm() {
-    this.arrPost.push(this.newpost);
-    this.newpost = { titulo: "", imagen: "", fecha: "", texto: "" }
+    if (this.newpost.titulo !== "" && this.newpost.imagen !== "" && this.newpost.fecha !== "" && this.newpost.texto !== "") {
+      this.arrPost.push(this.newpost);
+      this.newpost = { titulo: "", imagen: "", fecha: "", texto: "" }
+    } else {
+      alert('Los campos son obligatorios')
+    }
   }
 
 
