@@ -12,10 +12,10 @@ export class FormComponent {
   postsServices = inject(PostsService);
 
 
-  getDataForm() {
-    if (this.newpost.titulo !== "" && this.newpost.imagen !== "" && this.newpost.fecha !== "" && this.newpost.texto !== "") {
-      let response = this.postsServices.insert(this.newpost);
-      this.newpost = { titulo: "", imagen: "", fecha: "", texto: "" }
+  getDataForm(form: any) {
+    if (form.value.titulo !== "" && form.value.imagen !== "" && form.value.fecha !== "" && form.value.texto !== "") {
+      let response = this.postsServices.insert(form.value);
+      form.resetForm();
       alert(response);
     } else {
       alert('Los campos son obligatorios')
